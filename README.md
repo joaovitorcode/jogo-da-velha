@@ -1,0 +1,1 @@
+# Aprendendo Typescript + Tailwind + Jest desenvolvendo um jogo da velha
