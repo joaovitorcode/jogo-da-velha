@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Square } from './Square'
 import { Status } from './Status'
+import { Reset } from './Reset'
 
 export const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
@@ -35,7 +36,6 @@ export const Board = () => {
           && squares[item[1]] === 'X'
             && squares[item[2]] === 'X') {
         setWinner('X venceu!')
-        return squares[item[0]]
       }
 
       if (squares[item[0]] === 'O'
@@ -48,7 +48,10 @@ export const Board = () => {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center">
-      <Status isX={isX} winner={winner} setWinner={setWinner} setSquares={setSquares} />
+      <div className="h-96 flex flex-col gap-2">
+        <Status isX={isX} winner={winner} />
+        <Reset setWinner={setWinner} setSquares={setSquares} />
+      </div>
       <div className="w-96 h-96 bg-zinc-100 grid grid-cols-3 grid-rows-3 gap-2">
         <Square value={squares[0]} onClick={() => handleClick(0)} />
         <Square value={squares[1]} onClick={() => handleClick(1)} />
