@@ -17,6 +17,7 @@ git clone git@github.com:joaovitorcode/jogo-da-velha.git
 npm i
 // ou
 yarn
+```
 
 ##  Como funciona
 - O jogador "X" começa a partida.
